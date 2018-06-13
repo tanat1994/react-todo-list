@@ -1,9 +1,11 @@
 import React, { Component } from 'react';
 import TableTodo from './table-todo';
 import 'bulma/css/bulma.min.css';
+import 'font-awesome/css/font-awesome.min.css';
 import axios from 'axios';
 
 class Todo extends Component {
+
   constructor (props) {
     super(props);
     this.state = {
@@ -41,60 +43,89 @@ class Todo extends Component {
   render () {
     return (
       <div className="field">
+        <section className="hero is-medium is-warning">
+          <div className="container">
+            <nav className="navbar is-warning">
 
-        <nav className="navbar is-warning">
-          <a className="navbar-item">
-            <img src="https://bulma.io/images/bulma-logo.png"
-                alt="Bulma: a modern CSS framework based on Flexbox"
-                width="112" height="28" />
-          </a>
-        </nav>
-
-        <h1 className="title is-1">Todo List</h1>
-
-        <div className="container">
-          {/*<div className="field has-addons">
-            <div className="control">
-              <input className="input" type="text"
-                placeholder="Todo List"
-                value={this.state.newTodo}
-                onChange= { event => this.setState({ newTodo: event.target.value })}/>
-            </div>
-
-            <div className="control">
-              <a className={this.state.loading}
-                onClick={this.onAddList}>
-                Add to list
+              <a className="navbar-item">
+                <img src="https://bulma.io/images/bulma-logo.png"
+                    alt="Bulma: a modern CSS framework based on Flexbox"
+                    width="112" height="28" />
               </a>
-            </div>
-          </div>
-          */}
 
-          <div className="field">
-            <input className="input" type="text"
-              placeholder="Todo Title"
-              value={this.state.newTodo}
-              onChange={ event => this.setState({ newTodo: event.target.value })}/>
-          </div>
-          <div className="field">
-            <input className="input" type="text"
-              placeholder="Todo Description"
-              value={this.state.todoDesc}
-              onChange={ event => this.setState({ todoDesc: event.target.value })}/>
+              <div className="navbar-end">
+                <div className="navbar-item">
+                  <div className="field is-grouped">
+                    <p className="control">
+                      <a className="button is-info">
+                        <span className="icon"><i className="fa fa-twitter"></i></span>
+                        <span>Twitter</span>
+                      </a>
+                    </p>
+
+                    <p className="control">
+                      <a className="button is-primary">
+                        <span className="icon"><i className="fa fa-download"></i></span>
+                        <span>Download</span>
+                      </a>
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+            </nav>
           </div>
 
-          <nav className="level">
-            <div className="level-left">
+          <div className="hero-body">
+            <div className="container">
+              <h1 className="title">Todo List /></h1>
+              <h2 className="subtitle">Todolist Application</h2>
+
+              {/*<div className="field has-addons">
+                <div className="control">
+                  <input className="input" type="text"
+                    placeholder="Todo List"
+                    value={this.state.newTodo}
+                    onChange= { event => this.setState({ newTodo: event.target.value })}/>
+                </div>
+
+                <div className="control">
+                  <a className={this.state.loading}
+                    onClick={this.onAddList}>
+                    Add to list
+                  </a>
+                </div>
+              </div>
+              */}
+
+              <div className="field">
+                <input className="input" type="text"
+                  placeholder="Todo Title"
+                  value={this.state.newTodo}
+                  onChange={ event => this.setState({ newTodo: event.target.value })}/>
+              </div>
+              <div className="field">
+                <input className="input" type="text"
+                  placeholder="Todo Description"
+                  value={this.state.todoDesc}
+                  onChange={ event => this.setState({ todoDesc: event.target.value })}/>
+              </div>
+
+              <nav className="level">
+                <div className="level-left">
+                  &nbsp;
+                </div>
+                <div className="level-right">
+                  <a className={this.state.loading}
+                    onClick={this.onAddList}>
+                    Add New Todo
+                  </a>
+                </div>
+              </nav>
             </div>
-            <div className="level-right">
-              <a className={this.state.loading}
-                onClick={this.onAddList}>
-                Add New Todo
-              </a>
-            </div>
-          </nav>
-          
-        </div>
+          </div>
+
+        </section>
 
         <div className="container">
           <TableTodo />

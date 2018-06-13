@@ -21,7 +21,7 @@ class TableTodo extends Component {
       <table className="table">
         <thead>
           <tr>
-            <th>Todo</th>
+            <th>Todo List</th>
           </tr>
         </thead>
         <tbody>
