@@ -1,4 +1,5 @@
 const express = require('express');
+const path = require('path');
 const app = express();
 const Todo = require('./models/dummyTodo'); //dummy
 const { ObjectID } = require('mongodb');
@@ -13,6 +14,11 @@ const port = process.env.PORT || 3001;
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
+
+// @dev render Inder.html
+app.get('*', (req, res) => {
+  res.sendFile(path.join(__dirname + '/client/build/index.html'));
+});
 
 // @dev fetch Todo
 app.get('/api/todo-list', (req, res) => {
