@@ -42,7 +42,7 @@ class Todo extends Component {
 
   render () {
     return (
-      <div className="field">
+      <div className="field"> 
         <section className="hero is-medium is-warning">
           <div className="container">
             <nav className="navbar is-warning">
